@@ -1,0 +1,32 @@
+import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Contact from '../components/Contact';
+import Header from '../components/Header';
+import Home from '../components/Home';
+import IndividualPortfolio from '../components/IndividualPortfolio';
+import NotFoundPage from '../components/NotFoundPage';
+import Portfolio from '../components/Portfolio';
+
+const AppRouter = () => (
+    <BrowserRouter> 
+        <div>
+            <Header />
+            <Switch>
+                <Route path="/" component={Home} exact={true}/>
+                <Route path="/contact" component={Contact}/>
+                <Route path="/portfolio" component={Portfolio} exact={true}/>
+                <Route path="/portfolio/:id" component={IndividualPortfolio} exact={true}/>
+                <Route component={NotFoundPage} />
+            </Switch>
+        </div>
+    </BrowserRouter>
+);
+//EditExpensePage ekata prop object ekak tynawa.dynnamic data walata anuwa prop object eke proerties wenas wenawa
+
+//Header ekee props ganna baluwoth mekata props enne ne(empty object ekak enne) mokada meka Router ekak sambanda wela nathi ekak nisa.
+//Header ekata component value ekak set karala nathi nisa thama router ekata adala prop object eka enne naththe
+
+export default AppRouter;
+
+//BrowserRouter for create router
+//Route is created for every page 
